@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    var versionUpdate = System.Configuration.ConfigurationManager.AppSettings["versionKey"];
+}
+<link rel="stylesheet" href="~/Content/Css/JsonFile/JsonFile.css">
+<div class="row">
+    <div class="col-md-12">
+        <div class="border border-color min-vh-75 overflow-auto mt-2">
+            <div class="mr-2 ml-2 ">
+                <table class="table" id="tblJsonFile">
+                    <thead style="background-color: #4472c4; color: white; ">
+                        <tr>
+                            @*<th scope="col">Token</th>*@
+                            <th scope="col">Prompt</th>
+                            @*<th scope="col">Token</th>*@
+                            <th scope="col">Completion</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="2"></td>  <td class="textBox-BackColor"> <svg style="cursor: pointer" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16"> <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" /> </svg> </td> </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="mt-2 float-end">
+            <button type="button" id="btnGJson" class="btn btn-primary" disabled>Generate JSON</button>
+            <button type="button" class="btn btn-primary" onclick="promptModel()">Generate From Excel</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="importExcel" tabindex="-1" aria-labelledby="importLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="importLabel">Import</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="overflow: auto;" id="importModelBody">
+                <input id="fileupload" type="file" name="files[]" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="importExcel()">Import</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/AppJS/JsonFile/JsonFile.js?v=@versionUpdate"></script>
+    <script src="~/Scripts/AppJS/Common/Common.js?v=@versionUpdate"></script>
+    <script src="~/Scripts/xlsx/xlsx.full.min.js"></script>
+}

@@ -1,0 +1,24 @@
+﻿.textBox-BackColor {
+    background-color: #fbcaca !important;
+}
+
+
+.min-vh-75 {
+    min-height: 75vh !important;
+    height: 75vh !important;
+}
+
+td, th {
+    padding: 0.1rem 0.1rem !important;
+    border-right: 1px solid #80808042;
+    padding-left: 5px !important;
+}
+
+th, td, label {
+    font-size: small;
+}
+
+.border-color {
+    --bs-border-opacity: 1;
+    border-color: #4472c4 !important;
+}

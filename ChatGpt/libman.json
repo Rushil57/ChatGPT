@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "xlsx@0.18.5",
+      "destination": "Scripts/xlsx/"
+    }
+  ]
+}

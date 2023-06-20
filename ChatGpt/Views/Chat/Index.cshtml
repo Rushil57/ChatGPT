@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    var versionUpdate = System.Configuration.ConfigurationManager.AppSettings["versionKey"];
+}
+
+<link rel="stylesheet" href="~/Content/Css/Chat/Chat.css">
+<div class="row">
+    <div class="col-md-12 mt-3">
+        <div class="mt-2">
+            Instructions: <div class="float-end" style="width:32% !important">Model: <select class="mb-2 form-control form-select" style="display:inline !important" id="modelIDList"></select></div><textarea type="text" class="form-control resultArea" id="instructions"> </textarea>
+        </div>
+        <div class="mt-2">
+            Query:<textarea type="text" class="form-control searchArea" id="query"> </textarea>
+        </div>
+        <div class="mt-2">
+            <button type="button" class="btn btn-primary" onclick="searchOnChatGPT()">Search</button>
+        </div>
+        <div class="mt-2 mb-2">
+            Result: <textarea type="text" class="form-control resultArea" id="result" readonly> </textarea>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/AppJS/Chat/Chat.js?v=@versionUpdate"></script>
+    <script src="~/Scripts/AppJS/Common/Common.js?v=@versionUpdate"></script>
+}
+
